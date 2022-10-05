@@ -1,5 +1,5 @@
 // Declarando Variáveis (require)
-
+required('dotenv').config()
 const express = require('express')
 const nunjucks = require('nunjucks')
 const methodOverride = require('method-override')
@@ -30,6 +30,4 @@ nunjucks.configure("src/app/views", {
 
 // Inicializando o Servidor
 
-server.listen(5000, () => {
-    console.log("server is running")
-})
+server.listen(process.env.PORT || 5000)
