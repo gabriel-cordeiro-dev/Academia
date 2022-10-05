@@ -2,9 +2,9 @@ require('dotenv').config()
 const { Pool } = require('pg')
 
 module.exports = new Pool({
-    user: process.env.DBUSER,
-    password: process.env.DBPASS,
-    host: process.env.DBHOST,
+    user: 'gymmanager',
+    password: 'gymmanager123',
+    host: 'gymmanager.cqi18ydtvhey.us-east-1.rds.amazonaws.com',
     port: 5432,
-    database: process.env.DBNAME
+    database: 'gymmanager'
 })
