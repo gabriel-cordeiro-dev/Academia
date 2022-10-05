@@ -1,0 +1,115 @@
+/* Menu de Navegação */
+
+header {
+    position: relative;
+    z-index: 10;
+}
+
+.menu-navegacao{
+    width: 100%;
+    min-height: 5em;
+    background-color: white;
+    font-size: 24px;
+    line-height: 35px;
+    margin-bottom: 3em;
+    box-shadow: inset 0px 0px 4px 1px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-navegacao ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.menu-navegacao li{
+    display: inline-block;
+    margin: .1em
+}
+
+.menu-navegacao a{
+    color: rgba(0,0,0,.6);
+    margin: 1em;
+    position: relative;
+}
+
+.menu-navegacao a::after{
+    content: "";
+    width: 0%;
+    height: .05em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width .5s cubic-bezier(0.42, 0, 0.19, 1.06);
+}
+
+@media(hover: hover){
+    .menu-navegacao a:hover{
+        font-weight: bold;
+    }
+    
+    .menu-navegacao a:hover::after{
+        width: 96%;
+    }
+}
+
+
+/* Menu de Navegação (Ids específicos dos Links) */
+
+.menu-navegacao #instructors-link::after{
+    background-color: var(--primary-color);
+}
+
+@media(hover: hover){
+    .menu-navegacao #instructors-link:hover{
+        color: var(--primary-color);
+    }
+}
+
+.menu-navegacao #members-link::after{
+    background-color: var(--quaternary-color);
+}
+
+@media(hover: hover){
+    .menu-navegacao #members-link:hover{
+        color: var(--quaternary-color);
+    }
+}
+
+
+/* Classes CSS Dinâmicas (Active Links) */
+
+.menu-navegacao .active-instructors-link{
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.menu-navegacao .active-instructors-link:after{
+    content: "";
+    width: 96%;
+    height: .05em;
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width .5s cubic-bezier(0.42, 0, 0.19, 1.06);
+}
+
+.menu-navegacao .active-members-link{
+    color: var(--quaternary-color);
+    font-weight: bold;
+}
+
+.menu-navegacao .active-members-link::after{
+    content: "";
+    width: 96%;
+    height: .05em;
+    background-color: var(--quaternary-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width .5s cubic-bezier(0.42, 0, 0.19, 1.06);
+}

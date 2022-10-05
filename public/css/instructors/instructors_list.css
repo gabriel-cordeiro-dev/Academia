@@ -1,0 +1,167 @@
+/* Card Section */
+
+.card{
+    background-color: white;
+    margin: -10em auto;
+    width: 60vw;
+    min-height: 120vh;
+    box-shadow: inset 0px 5px 5px 3px rgba(0,0,0,.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card .create-and-filter{
+    width: 65%;
+    margin-top: 7em;
+    margin-bottom: 1em;
+    display: grid;
+    gap: 2em;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-items: initial;
+    box-sizing: border-box;
+}
+
+.card .major-item-link{
+    width: 65%;
+    display: block;
+    margin: 3em;
+    padding: 0;
+    border-radius: 15px;
+    transition: .2s ease-in-out;
+}
+
+.card .invisible-major-item-link{
+   display: none;
+}
+
+
+/* Create and Filter Div */
+
+.create-and-filter .new-instructor-button{
+    width: 40%;
+    color: white;
+    background: linear-gradient(to bottom right,
+        rgb(228, 167, 54) 0%,
+        rgb(236, 163, 29) 40%,
+        rgb(224, 126, 6) 90%);
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+    border-radius: 15px;
+    box-shadow: 1px 1px 2px 1px rgba(0,0,0,.5);
+    margin-left: 2em;
+    padding: .5em;
+    box-sizing: border-box;
+}
+
+@media(hover: hover) {
+    .create-and-filter .new-instructor-button:hover{
+        box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,.5);
+    }
+}
+
+.create-and-filter .list-filter-div{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: end;
+    margin-left: -2em;
+}
+
+.create-and-filter .list-filter-div input{
+    width: 70%;
+    min-height: 2.5em;
+    font-size: 14px;
+    border-radius: 10px;
+    border: 1px solid lightgrey;
+    margin-right: .5em;
+    padding: .5em;
+    box-sizing: border-box;
+}
+
+.create-and-filter .list-filter-div span{
+    width: 20%;
+    color: white;
+    background: linear-gradient(to bottom right,
+        rgb(228, 167, 54) 0%,
+        rgb(236, 163, 29) 40%,
+        rgb(224, 126, 6) 90%);
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    margin: 0;
+    padding: .2em;
+    box-sizing: border-box;
+}
+
+
+/* Details Div */
+
+.details {
+    width: 100%;
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid orange;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: .5em;
+    align-items: initial;
+    transition: .2s ease-in-out;
+}
+
+@media(hover: hover) {
+    .details:hover{
+        border-radius: inherit;
+        box-shadow: 1px 1px 2px 1px rgba(0,0,0,.2);
+        background: linear-gradient(to top right, white 0%, orange 200%);
+        border-right: 20px solid rgba(0,0,0, .1);
+        border-bottom: none;
+        transform: scale(1.05);
+        border-image-slice: 27 0 27 67;
+        border-image-width: 20px 20px 20px 20px;
+        border-image-outset: 8px 0px 10px 0px;
+        border-image-source: url("../../img/border_image.png");
+    }
+}
+
+.details .item {
+    color: rgba(0,0,0,.6);
+    font-size: 60%;
+    font-weight: normal;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.details .avatar{
+    width: 15em;
+    height: 15em;
+    border-radius: 100%;
+    box-sizing: border-box;
+    margin-left: 2em;
+    position: relative;
+}
+
+.details .avatar img{
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    box-shadow: 1px 1px 5px 0px black;
+}
+
+.details .text-info{
+    width: 100%;
+    font-size: 100%;
+}
+
+.details .text-info span{
+    font-weight: bold;
+    display: block;
+}

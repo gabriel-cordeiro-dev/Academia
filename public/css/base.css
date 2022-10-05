@@ -1,0 +1,97 @@
+/* Variáveis de Cor */
+
+:root{
+    --primary-color: darkorange;
+    --secondary-color: #f7df1e;
+    --tertiary-color: rgb(255, 0, 38);
+    --quaternary-color: rgb(89, 89, 207);
+    --quinary-color: rgb(112, 146, 112);
+}
+
+
+/* Estilos Básicos do Corpo */
+
+body{
+    width: 100vw;
+    height: 100vh;
+    color: rgba(0,0,0,.6);
+    font-family: "Roboto", "sans serif";
+    font-size: 16px;
+    line-height: 28px;
+    position: relative;
+    overflow-x: hidden;
+    z-index: -10;
+}
+
+body h1{
+    font-size: 240%;
+    font-weight: bold;
+    margin: .3em;
+}
+
+body h2{
+    font-size: 180%;
+    font-weight: bold;
+    margin: .2em;
+}
+
+body h3{
+    font-size: 130%;
+    font-weight: bold;
+}
+
+body ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+body a{
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    -khtml-tap-highlight-color: transparent;
+    -moz-tap-highlight-color: transparent;
+    -ms-tap-highlight-color: transparent;
+}
+
+body img{
+    -webkit-tap-highlight-color: transparent;
+    -khtml-tap-highlight-color: transparent;
+    -moz-tap-highlight-color: transparent;
+    -ms-tap-highlight-color: transparent;
+}
+
+body input{
+    -webkit-tap-highlight-color: transparent;
+    -khtml-tap-highlight-color: transparent;
+    -moz-tap-highlight-color: transparent;
+    -ms-tap-highlight-color: transparent;
+}
+
+body:focus{
+    outline: none;
+}
+
+body input:focus{
+    background-color: lightyellow;
+    outline: none;
+}
+
+body button:focus{
+    outline: none;
+}
+
+
+/* Classes CSS Dinâmicas (Page Bodies) */
+
+.home-body{
+    background-color: var(--quinary-color)
+}
+
+.instructors-body{
+    background-color: var(--primary-color)
+}
+
+.members-body{
+    background-color: var(--quaternary-color)
+}

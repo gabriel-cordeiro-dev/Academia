@@ -1,0 +1,77 @@
+{% extends "layout.njk" %}
+
+{% block head_content %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/members/edit_member.css">
+{% endblock head_content %}
+
+
+{% block body_main_content %}
+    <main>
+        <div class="card">
+            <div class="avatar">
+                    <img src="{{member.avatar_url}}" alt="Imagem do Membro">
+            </div>
+
+            <div class="details">
+                <form id="edit-form" method="POST" action="/members/edit_member?_method=PUT">
+                    <h3>Editar Membro</h3>
+
+                    <input
+                        type="hidden"
+                        name="id"
+                        value="{{member.id}}"
+                    >      
+
+                    {% include "./includes/form_fields.njk" %}
+
+                </form>
+
+                <form id="fake-form">
+                    <button
+                        id="fake-delete-button"
+                        class="tertiary-color-button form-button"
+                        type="button"
+                        onclick="toggleDeleteModalClasses()"
+                    >
+                    Deletar
+                    </button>
+                </form>
+                
+                <section id = "modal-delete" class= "modal-delete">
+                    <form id="delete-form" method="POST" action="/members/edit_member?_method=DELETE">
+                        <input
+                            type="hidden"
+                            name="id"
+                            value="{{member.id}}"
+                        >
+
+                        <span class="confirmation-text">
+                            <p>
+                                Confirma que quer deletar este membro?
+                            </p>
+                        </span>
+
+                        <div class="buttons-div">
+                            <button
+                            type="submit"
+                            >
+                            Sim
+                            </button>
+
+                            <button
+                                type="button"
+                                onclick="toggleDeleteModalClasses()"
+                            >
+                            Não
+                            </button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+{% endblock body_main_content%}

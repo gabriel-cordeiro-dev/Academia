@@ -1,0 +1,75 @@
+{% extends "layout.njk" %}
+
+{% block head_content %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/instructors/instructors_list.css">
+{% endblock head_content %}
+
+
+{% block body_main_content %}
+    <main>
+        <section class="card">
+            <div class="create-and-filter">
+                <a 
+                    class="new-instructor-button"
+                    href="/instructors/new"
+                >
+                    Novo Instrutor
+                </a>
+                <div class="list-filter-div">
+                    <input 
+                        type="text"
+                        name="filter"
+                        placeholder="Digite o nome do instrutor"
+                    >
+
+                    <span>
+                        Busca
+                    </span>
+                </div>
+            </div>
+
+            {% for instructor in instructors %}
+                <a
+                    class="major-item-link"
+                    href="/instructors/selected_instructor/{{instructor.id}}"
+                >
+                    <ul class="details">
+                        <li class="item avatar">
+                            <img
+                                src="{{instructor.avatar_url}}"
+                                alt="Imagem do Instrutor"
+                            >
+                        </li>
+                        <li class="item text-info item-name">
+                            <span>Nome:</span>
+                            <p>{{instructor.name}}</p>
+                        </li>
+                        <li class="item text-info">
+                           <span>Alunos:</span>
+                           <p>{{instructor.total_students}}</p>
+                        </li>
+                        <li class="item text-info">
+                           <span>Idade:</span>
+                           <p>{{instructor.age}}</p>
+                        </li>
+                        <li class="item text-info">
+                           <span>Acompanhamento:</span>
+                           <p>{{instructor.services}}</p>
+                        </li>
+                    </ul>
+                </a>
+            {% endfor %}
+
+        </section>
+    </main>
+{% endblock body_main_content%}
+    
+{% block scripts_content %}
+    <script>
+        toggleInvisibleClassByFilter()
+    </script>
+{% endblock scripts_content %}
